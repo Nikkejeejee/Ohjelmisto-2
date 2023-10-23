@@ -48,8 +48,8 @@ leaderboard.sort(key=lambda x: x[3], reverse=True)
 
 print("Race Leaderboard:")
 for i, (reg_number, max_speed, cur_speed, trav_dist) in enumerate(leaderboard, start=1):
-    print(f"Position {Fore.RED}{i}{Style.RESET_ALL}:"
-          f" Registration number: {Fore.CYAN}{reg_number}{Style.RESET_ALL},"
+    print(f"Position {Fore.RED}{i}{Style.RESET_ALL}:\n"
+          f" {Fore.CYAN}{reg_number}{Style.RESET_ALL},"
           f" Max speed: {Fore.GREEN}{max_speed} km/h{Style.RESET_ALL},"
           f" Current speed: {Fore.YELLOW}{cur_speed} km/h{Style.RESET_ALL},"
           f" Traveled distance: {Fore.MAGENTA}{trav_dist} km{Style.RESET_ALL}")
