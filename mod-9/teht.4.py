@@ -28,7 +28,7 @@ class Car:
         change = hours * self.cur_speed
         self.trav_dist += change
 
-# Create a list of cars
+
 cars = []
 for i in range(10):
     race_car = Car("ABC-" + str(i + 1), random.randint(100, 200), 0, 0)
