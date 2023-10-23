@@ -46,7 +46,7 @@ while True:
 leaderboard = [(car.reg_number, car.max_speed, car.cur_speed, car.trav_dist) for car in cars]
 leaderboard.sort(key=lambda x: x[3], reverse=True)
 
-print("Race Leaderboard:")
+print("\nRACE LEADERBOARD:\n")
 for i, (reg_number, max_speed, cur_speed, trav_dist) in enumerate(leaderboard, start=1):
     print(f"Position {Fore.RED}{i}{Style.RESET_ALL}:\n"
           f" {Fore.CYAN}{reg_number}{Style.RESET_ALL},"
