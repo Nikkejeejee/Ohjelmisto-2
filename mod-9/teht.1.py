@@ -1,5 +1,6 @@
 class Car():
-    def __init__(self, reg_number, max_speed, cur_speed, trav_dist):
+    def __init__(self, name, reg_number, max_speed, cur_speed, trav_dist):
+        self.name = name
         self.reg_number = reg_number
         self.max_speed = max_speed
         self.cur_speed = cur_speed
@@ -7,11 +8,12 @@ class Car():
 
 
     def intro(self):
-        print(f'Registration number of this car is: {uusi_auto.reg_number}\n'
-              f'Maxmimum speed: {uusi_auto.max_speed}\n'
-              f'Current speed: {uusi_auto.cur_speed}\n'
-              f'Travelled distance: {uusi_auto.trav_dist}')
+        print(f'Name: {self.name}\n'
+              f'Registration number: {self.reg_number}\n'
+              f'Maximum speed: {self.max_speed} km/h\n'
+              f'Current speed: {self.cur_speed} km/h\n'
+              f'Traveled distance: {self.trav_dist} km')
 
-uusi_auto = Car('ABC-123', 142, 0, 0)
-uusi_auto.intro()
 
+car = Car('Porsche', 'ABC-123', 142, 0, 0)
+car.intro()

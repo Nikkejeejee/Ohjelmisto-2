@@ -1,22 +1,33 @@
-class Car():
-    def __init__(self, reg_number, max_speed, cur_speed, trav_dist):
+class Car:
+    def __init__(self, name, reg_number, max_speed, cur_speed, trav_dist):
+        self.name = name
         self.reg_number = reg_number
         self.max_speed = max_speed
         self.cur_speed = cur_speed
         self.trav_dist = trav_dist
 
-
     def intro(self):
-        print(f'Registration number of this car is: {uusi_auto.reg_number}\n'
-              f'Maxmimum speed: {uusi_auto.max_speed}\n'
-              f'Current speed: {uusi_auto.cur_speed}\n'
-              f'Travelled distance: {uusi_auto.trav_dist}')
+        print(f'Name: {self.name}\n'
+              f'Registration number: {self.reg_number}\n'
+              f'Maximum speed: {self.max_speed} km/h\n'
+              f'Current speed: {self.cur_speed} km/h\n'
+              f'Traveled distance: {self.trav_dist} km')
 
+    def accelerate(self, change):
+        self.cur_speed += change
+        if self.cur_speed > self.max_speed:
+            self.cur_speed = self.max_speed
+        elif self.cur_speed < 0:
+            self.cur_speed = 0
 
-    def kiihdyta(self, cur_speed):
-        if self.cur_speed < 0:
-            return
+    def new_speed(self):
+        print(f"{self.name}'s current speed is {self.cur_speed} km/h")
 
-uusi_auto = Car('ABC-123', 142, 0, 0)
-uusi_auto.intro()
-
+car = Car('Porsche', 'ABC-123', 142, 0, 0)
+car.intro()
+car.accelerate(30)
+car.accelerate(70)
+car.accelerate(50)
+car.new_speed()
+car.accelerate(-200)
+car.new_speed()
