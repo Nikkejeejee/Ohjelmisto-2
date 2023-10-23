@@ -23,7 +23,16 @@ class Car:
     def new_speed(self):
         print(f"{self.name}'s current speed is {self.cur_speed} km/h")
 
-
     def drive(self, hours):
         change = hours * self.cur_speed
         self.trav_dist += change
+
+
+car = Car('Porsche', 'ABC-123', 142, 0, 0)
+car.intro()
+print("---------")
+
+cars = []
+for i in range(1, 11):
+    race_car = Car()
+
