@@ -1,0 +1,26 @@
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        h2 {
+            color: darkcyan;
+        }
+
+        .info {
+            color: #5faaa7;
+        }
+
+        p {
+            color: rgb(95, 169, 166);
+        }
+
+        #wrapper {
+            width: 50%;
+            padding: 3%;
+            margin: 0 auto 0;
+            background-color: yellow;
+        }
+
+
+
+    </style>
