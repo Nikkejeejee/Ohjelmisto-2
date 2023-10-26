@@ -1,3 +1,5 @@
+from colorama import Fore, Style
+
 class Car:
     def __init__(self, name, reg_number, max_speed, cur_speed, trav_dist):
         self.name = name
@@ -11,7 +13,7 @@ class Car:
               f'Registration number: {self.reg_number}\n'
               f'Maximum speed: {self.max_speed} km/h\n'
               f'Current speed: {self.cur_speed} km/h\n'
-              f'Traveled distance: {self.trav_dist} km')
+              f'Traveled distance: {Fore.YELLOW}{self.trav_dist} km.{Style.RESET_ALL}')
 
     def accelerate(self, change):
         self.cur_speed += change
