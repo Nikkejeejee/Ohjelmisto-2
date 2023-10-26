@@ -14,14 +14,13 @@ class Car:
               f'Traveled distance: {self.trav_dist} km')
 
     def accelerate(self, change):
-        self.cur_speed += change
-        if self.cur_speed > self.max_speed:
-            self.cur_speed = self.max_speed
-        elif self.cur_speed < 0:
-            self.cur_speed = 0
+        new_speed = self.cur_speed + change
+        self.cur_speed = min(self.max_speed, max(0, new_speed))
+
 
     def new_speed(self):
         print(f"{self.name}'s current speed is {self.cur_speed} km/h")
+
 
 car = Car('Porsche', 'ABC-123', 142, 0, 0)
 car.intro()
