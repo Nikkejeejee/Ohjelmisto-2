@@ -31,26 +31,34 @@ class Car:
 
 
 cars = []
-for i in range(10):
-    race_car = Car("ABC-" + str(i + 1), random.randint(100, 200), 0, 0)
+for i in range(1, 11):
+    race_car = Car("ABC-" + str(i), random.randint(100, 200), 0, 0)
     cars.append(race_car)
 
-race_finished = True
+race_going_on = True
 
-while race_finished:
+while race_going_on:
     for race_car in cars:
         race_car.accelerate(random.randint(-10, 15))
         race_car.drive(1)
-
         if race_car.trav_dist >= 10000:
-            race_finished = False
+            race_going_on = False
             break
 
 leaderboard = [(car.reg_number, car.max_speed, car.cur_speed, car.trav_dist) for car in cars]
-leaderboard.sort(key=lambda x: x[3], reverse=True)
+sorted_leaderboard = []
+while leaderboard:
+    max_dist = 0
+    winning_car = None
+    for car_in_leaderboard in leaderboard:
+        if car_in_leaderboard[3] > max_dist:
+            max_dist = car_in_leaderboard[3]
+            winning_car = car_in_leaderboard
+    sorted_leaderboard.append(winning_car)
+    leaderboard.remove(winning_car)
 
 print("\nRACE LEADERBOARD:\n")
-for i, (reg_number, max_speed, cur_speed, trav_dist) in enumerate(leaderboard, start=1):
+for i, (reg_number, max_speed, cur_speed, trav_dist) in enumerate(sorted_leaderboard, start=1):
     print(f"Position {Fore.RED}{i}{Style.RESET_ALL}:\n"
           f" {Fore.CYAN}{reg_number}{Style.RESET_ALL},"
           f" Max speed: {Fore.GREEN}{max_speed} km/h{Style.RESET_ALL},"

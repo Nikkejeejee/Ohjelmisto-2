@@ -15,7 +15,8 @@ class Car:
 
     def accelerate(self, change):
         new_speed = self.cur_speed + change
-        self.cur_speed = min(self.max_speed, max(0, new_speed))
+        self.cur_speed = min(new_speed, self.max_speed)
+        self.cur_speed = max(self.cur_speed, 0)
 
 
     def new_speed(self):
@@ -26,6 +27,7 @@ car = Car('Porsche', 'ABC-123', 142, 0, 0)
 car.intro()
 car.accelerate(30)
 car.accelerate(70)
+car.new_speed()
 car.accelerate(50)
 car.new_speed()
 car.accelerate(-200)
