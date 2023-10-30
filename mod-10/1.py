@@ -15,6 +15,8 @@ class Elevator:
             print(f"Going down. Floor {self.current_floor}")
 
     def go_to_floor(self, move):
+        if move < self.bottom_floor or move > self.top_floor:
+            return
         while self.current_floor != move:
             if self.current_floor < move:
                 self.floor_up()
