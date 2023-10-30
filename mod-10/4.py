@@ -17,9 +17,9 @@ class Race:
     def print_status(self):
         """Print the status of the race including car distances and speeds."""
         print("\nRace Status:")
-        print(f"{'Car':<15}{'Distance (km)':<15}{'Speed (km/h)':<15}")
+        print("{:<15}{:<15}{:<15}".format("Car", "Distance (km)", "Speed (km/h)"))
         for car in self.cars:
-            print(f"{car.name:<15}{car.distance:.2f:<15}{car.speed:.2f:<15}")
+            print("{:<15}{:.2f}{:.2f}".format(car.name, car.distance, car.speed))
 
     def leaderboard(self):
         """Print the race leaderboard sorted by distance traveled."""
