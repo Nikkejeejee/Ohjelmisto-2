@@ -17,9 +17,11 @@ class Race:
             print(f"\nRace Status after {hours} hours:")
         else:
             print("\nInitial Race Status:")
-        print("{:<15}{:<15}{:<15}".format("---Car---", "Distance (km)", "Speed (km/h)"))
+        print("-" * 48)
+        print("{:<19}{:<15}{:<15}".format("Car Name", "Distance (km)", "Speed (km/h)"))
+        print("-" * 48)
         for car in self.cars:
-            print("{:<15}{:<15.2f}{:<15.2f}".format(car.name, car.distance, car.speed))
+            print("{:<20}{:<15.2f}{:<15.2f}".format(car.name, car.distance, car.speed))
 
     def leaderboard(self):
         winning_cars = sorted(self.cars, key=lambda car: car.distance, reverse=True)
@@ -52,8 +54,9 @@ class Car:
         self.distance += self.speed
 
 def main():
-    car_names = ["Tesla", "Ferrari", "BMW", "Audi", "Mercedes",
-                 "Lamborghini", "Porsche", "Jaguar", "Maserati", "Lexus"]
+    print("\n🏁🚗🚨WELCOME TO GRAND DEMOLITION DERBY RACE!🗣️🏅")
+    car_names = ["Wrecking Ball", "Smashmaster", "Havoc Machine", "Apocalypse Auto", "WaffleMe",
+                 "UrHotterMama", "Chaos Exist", "Fat Cabbage", "LIL Pyro", "Demon Danny"]
 
     cars = [Car(name) for name in car_names]
     race = Race("Grand Demolition Derby", 8000, cars)
