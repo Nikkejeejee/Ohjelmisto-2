@@ -22,12 +22,11 @@ class Race:
             print("{:<15}{:<15.2f}{:<15.2f}".format(car.name, car.distance, car.speed))
 
     def leaderboard(self):
-        """Print the race leaderboard sorted by distance traveled."""
         winning_cars = sorted(self.cars, key=lambda car: car.distance, reverse=True)
 
         leaderboard_data = []
         for i, car in enumerate(winning_cars, start=1):
-            leaderboard_data.append([i, car.name, car.distance, car.speed])
+            leaderboard_data.append([i, car.name, f'{car.distance:.2f}', f'{car.speed:.2f}'])
 
         print("\nRACE LEADERBOARD:")
         table_headers = ["Position", "Car", "Distance (km)", "Speed (km/h)"]
