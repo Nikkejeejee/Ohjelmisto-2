@@ -12,9 +12,12 @@ class Race:
             car.random_speed_change()
             car.drive()
 
-    def print_status(self):
-        print("\nRace Status:")
-        print("{:<15}{:<15}{:<15}".format("Car", "Distance (km)", "Speed (km/h)"))
+    def print_status(self, hours):
+        if hours > 0:
+            print(f"\nRace Status after {hours} hours:")
+        else:
+            print("\nInitial Race Status:")
+        print("{:<15}{:<15}{:<15}".format("---Car---", "Distance (km)", "Speed (km/h)"))
         for car in self.cars:
             print("{:<15}{:<15.2f}{:<15.2f}".format(car.name, car.distance, car.speed))
 
@@ -57,12 +60,12 @@ def main():
 
     hours = 0
     while not race.race_finished():
-        race.hour_passes()
         if hours % 10 == 0:
-            race.print_status()
+            race.print_status(hours if hours > 0 else 0)
+        race.hour_passes()
         hours += 1
 
-    print("\nRACE FINISHED!")
+    print("\n\U0001F6D1 RACE FINISHED!🏎️💨")
     race.leaderboard()
 
 if __name__ == "__main__":
