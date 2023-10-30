@@ -3,19 +3,16 @@ from tabulate import tabulate
 
 class Race:
     def __init__(self, name, distance, cars):
-        """Initialize a race with a name, distance, and a list of cars."""
         self.name = name
         self.distance = distance
         self.cars = cars
 
     def hour_passes(self):
-        """Simulate one hour of the race, updating car speeds and distances."""
         for car in self.cars:
             car.random_speed_change()
             car.drive()
 
     def print_status(self):
-        """Print the status of the race including car distances and speeds."""
         print("\nRace Status:")
         print("{:<15}{:<15}{:<15}".format("Car", "Distance (km)", "Speed (km/h)"))
         for car in self.cars:
@@ -34,7 +31,6 @@ class Race:
         print(table)
 
     def race_finished(self):
-        """Check if the race has finished for all cars."""
         for car in self.cars:
             if car.distance >= self.distance:
                 return True
@@ -42,17 +38,14 @@ class Race:
 
 class Car:
     def __init__(self, name):
-        """Initialize a car with a name, starting at 0 distance and a random speed between 60 and 120 km/h."""
         self.name = name
         self.distance = 0
         self.speed = random.uniform(60, 120)
 
     def random_speed_change(self):
-        """Introduce random speed changes for the car."""
         self.speed += random.uniform(-5, 5)
 
     def drive(self):
-        """Simulate the car's movement in one hour."""
         self.distance += self.speed
 
 def main():
