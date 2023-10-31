@@ -1,3 +1,5 @@
+import time
+
 class Elevator:
     def __init__(self, bottom_floor, top_floor, elevator_id):
         self.bottom_floor = bottom_floor
@@ -9,11 +11,13 @@ class Elevator:
         if self.current_floor < self.top_floor:
             self.current_floor += 1
             print(f"Elevator {self.elevator_id}: Going up. Floor {self.current_floor}")
+        time.sleep(0.2)
 
     def floor_down(self):
         if self.current_floor > self.bottom_floor:
             self.current_floor -= 1
             print(f"Elevator {self.elevator_id}: Going down. Floor {self.current_floor}")
+        time.sleep(0.2)
 
     def go_to_floor(self, move):
         if move < self.bottom_floor or move > self.top_floor:
