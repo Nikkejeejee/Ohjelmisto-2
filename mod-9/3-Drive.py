@@ -1,5 +1,6 @@
 from colorama import Fore, Style
 
+
 class Car:
     def __init__(self, name, reg_number, max_speed, cur_speed, trav_dist):
         self.name = name
@@ -24,7 +25,6 @@ class Car:
 
     def new_speed(self):
         print(f"{self.name}'s current speed is {self.cur_speed} km/h")
-
 
     def drive(self, hours):
         change = hours * self.cur_speed

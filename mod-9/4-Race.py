@@ -31,8 +31,8 @@ class Car:
 
 
 cars = []
-for i in range(1, 11):
-    race_car = Car("ABC-" + str(i), random.randint(100, 200), 0, 0)
+for car_num in range(1, 11):
+    race_car = Car("ABC-" + str(car_num), random.randint(100, 200), 0, 0)
     cars.append(race_car)
 
 race_going_on = True
@@ -58,8 +58,8 @@ while leaderboard:
     leaderboard.remove(winning_car)
 
 print("\nRACE LEADERBOARD:\n")
-for i, (reg_number, max_speed, cur_speed, trav_dist) in enumerate(sorted_leaderboard, start=1):
-    print(f"Position {Fore.RED}{i}{Style.RESET_ALL}:\n"
+for car_num, (reg_number, max_speed, cur_speed, trav_dist) in enumerate(sorted_leaderboard, start=1):
+    print(f"Position {Fore.RED}{car_num}{Style.RESET_ALL}:\n"
           f" {Fore.CYAN}{reg_number}{Style.RESET_ALL},"
           f" Max speed: {Fore.GREEN}{max_speed} km/h{Style.RESET_ALL},"
           f" Current speed: {Fore.YELLOW}{cur_speed} km/h{Style.RESET_ALL},"

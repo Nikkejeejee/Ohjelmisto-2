@@ -18,7 +18,6 @@ class Car:
         self.cur_speed = min(new_speed, self.max_speed)
         self.cur_speed = max(self.cur_speed, 0)
 
-
     def new_speed(self):
         print(f"{self.name}'s current speed is {self.cur_speed} km/h")
 
